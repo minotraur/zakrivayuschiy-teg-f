@@ -1,1 +1,32 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+  --accent-color: #00cc14;
+  --card-background-color: #000;
+  --bg-gradient-color-from: #007f0c;
+  --bg-gradient-color-to: #004306;
+  --bg-gradient-bg-color: #000;
+
+  --font-weight-title: 785;
+  --font-weight-text: 465;
+
+  --bg-gradient: repeating-linear-gradient(
+      90deg,
+      var(--bg-gradient-bg-color),
+      var(--bg-gradient-bg-color) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      var(--bg-gradient-bg-color),
+      var(--bg-gradient-bg-color) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      to bottom,
+      var(--bg-gradient-color-from),
+      var(--bg-gradient-color-to)
+    );
+}

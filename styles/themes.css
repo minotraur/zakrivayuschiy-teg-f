@@ -4,3 +4,98 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+/* Темная тема */
+:root.theme-dark {
+  --accent-color: #00cc14;
+  --card-background-color: #000;
+  --bg-gradient-color-from: #007f0c;
+  --bg-gradient-color-to: #004306;
+  --bg-gradient-bg-color: #000;
+
+  --font-weight-title: 785;
+  --font-weight-text: 465;
+
+  --bg-gradient: repeating-linear-gradient(
+      90deg,
+      var(--bg-gradient-bg-color),
+      var(--bg-gradient-bg-color) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      var(--bg-gradient-bg-color),
+      var(--bg-gradient-bg-color) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      to bottom,
+      var(--bg-gradient-color-from),
+      var(--bg-gradient-color-to)
+    );
+}
+
+/* Светлая тема */
+:root.theme-light {
+  --accent-color: #000;
+  --card-background-color: #fff;
+  --bg-gradient-color-from: #e7e7e7;
+  --bg-gradient-color-to: #1a1a1a;
+  --bg-gradient-bg-color: #d3d3d3;
+  --font-weight-title: 700;
+  --font-weight-text: 400;
+
+  --bg-gradient: repeating-linear-gradient(
+      90deg,
+      var(--bg-gradient-bg-color),
+      var(--bg-gradient-bg-color) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      var(--bg-gradient-bg-color),
+      var(--bg-gradient-bg-color) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      to bottom,
+      var(--bg-gradient-color-from),
+      var(--bg-gradient-color-to)
+    );
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --accent-color: #000;
+    --card-background-color: #fff;
+    --bg-gradient-color-from: #e7e7e7;
+    --bg-gradient-color-to: #1a1a1a;
+    --bg-gradient-bg-color: #d3d3d3;
+    --font-weight-title: 700;
+    --font-weight-text: 400;
+
+    --bg-gradient: repeating-linear-gradient(
+        90deg,
+        var(--bg-gradient-bg-color),
+        var(--bg-gradient-bg-color) 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      repeating-linear-gradient(
+        180deg,
+        var(--bg-gradient-bg-color),
+        var(--bg-gradient-bg-color) 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      linear-gradient(
+        to bottom,
+        var(--bg-gradient-color-from),
+        var(--bg-gradient-color-to)
+      );
+  }
+}
