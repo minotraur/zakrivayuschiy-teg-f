@@ -31,7 +31,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-block-start: 102px;
+  margin-block-start: 100px;
   border: 2px solid var(--accent-color);
   color: var(--accent-color);
   font-family: "PressStart2P-Regular", monospace;
@@ -69,6 +69,7 @@
 
 .theme-menu__button {
   border: none;
+  border-block-end: 2px solid transparent;
   font-weight: 400;
   font-size: 14px;
   font-style: normal;
@@ -78,14 +79,28 @@
   cursor: pointer;
 }
 
+.theme-menu__item:has(.theme-menu__button:disabled) {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
 .theme-menu__item:has(.theme-menu__button:disabled)::before {
   content: "▶";
   position: relative;
-  right: -13px;
+  opacity: 0.6;
+  animation: left-right 0.5s ease-in-out infinite alternate;
 }
 
 .theme-menu__item .theme-menu__button:hover {
   opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+}
+
+.theme-menu__button:focus-visible {
+  border-block-end: 2px solid currentColor;
 }
 
 /* Конец header */
@@ -95,14 +110,34 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  padding-block-start: 102px;
+  padding-block-start: 100px;
 }
 
 .card {
+  position: relative;
   border: 2px solid var(--accent-color);
   color: var(--accent-color);
   background-color: var(--card-background-color);
   inline-size: 100%;
+  min-block-size: 760px;
+}
+
+.card:nth-child(1)::after {
+  content: "</HTML>";
+  position: absolute;
+  top: 75px;
+  right: 11px;
+  opacity: 0.5;
+  color: #000;
+  font-family: "PressStart2P-Regular", monospace;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  line-height: normal;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px #fff;
+  text-stroke: 1px #fff;
+  mix-blend-mode: hard-light;
 }
 
 .card__title {
@@ -117,13 +152,37 @@
 .card__image {
   width: 100%;
   border-block-end: 2px solid var(--accent-color);
+  object-fit: cover;
+  object-position: right;
   aspect-ratio: 1/1;
+}
+
+.card:nth-child(2) .card__image {
+  filter: saturate(0.3);
+}
+.card:nth-child(3) .card__image {
+  filter: saturate(2.5);
+}
+.card:nth-child(4) .card__image {
+  filter: sepia(0.6) saturate(1.7);
+}
+.card:nth-child(5) .card__image {
+  filter: invert(0.8);
+}
+.card:nth-child(6) .card__image {
+  filter: sepia(0.9);
+}
+.card:nth-child(7) .card__image {
+  filter: blur(8px);
+}
+.card:nth-child(8) .card__image {
+  filter: blur(1px) hue-rotate(80deg);
 }
 
 .card__content {
   display: flex;
   flex-direction: column;
-  gap: 27px;
+  gap: 30px;
   padding: 25px;
 }
 
@@ -131,7 +190,7 @@
   font-weight: var(--font-weight-text);
   font-size: 18px;
   font-style: normal;
-  line-height: 21px;
+  line-height: 20px;
 }
 
 .buttons {
@@ -141,33 +200,62 @@
 }
 
 .card__icon-button {
+  height: 36px;
   border: none;
+  padding: 0;
   background: none;
   cursor: pointer;
 }
 
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid currentColor;
+}
+
 .card__like-button {
-  width: 130px;
-  height: 38px;
+  position: relative;
+  width: 128px;
+  height: 35px;
   border: none;
   outline: 2px solid var(--accent-color);
   font-family: "PressStart2P-Regular", monospace;
   background: none;
+  cursor: pointer;
 }
 
-.card__like-button:hover {
+.card__like-button .button__text {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+  color: var(--button-text-color);
+}
+
+.card__like-button:focus-visible {
+  box-shadow: 4px 4px 0 0 currentColor;
   outline: 2px solid var(--accent-color);
-  opacity: 0.6;
-  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.card__like-button:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+
+  animation: left-right-button 0.5s ease-in-out both;
 }
 
 /* Конец main */
 
 /* Начало footer */
 .footer {
-  padding: 52px 32.5px 100px 32.5px;
   display: flex;
   justify-content: center;
+  padding: 52px 32.5px 100px 32.5px;
 }
 
 .footer-button {
@@ -179,9 +267,9 @@
   padding: 15px;
   color: var(--accent-color);
   background-color: transparent;
+  cursor: pointer;
   inline-size: 306px;
   block-size: 80px;
-  cursor: pointer;
 }
 
 .footer-button span {
@@ -217,14 +305,14 @@
 
 .info {
   display: flex;
-  gap: 20px;
   align-items: center;
+  gap: 20px;
 }
 
 .info svg {
-  fill: currentColor;
   width: inherit;
   height: inherit;
+  fill: currentColor;
 }
 
 .svg {
@@ -232,7 +320,7 @@
   height: 29px;
 }
 
-.text {
+.footer .text {
   font-family: "PressStart2P-Regular", monospace;
   font-weight: 400;
   font-size: 14px;
@@ -245,9 +333,9 @@
   border: 2px solid currentColor;
   font-family: inherit, monospace;
   background-color: transparent;
+  cursor: pointer;
   inline-size: 257px;
   block-size: 38px;
-  cursor: pointer;
 }
 /* Конец footer */
 

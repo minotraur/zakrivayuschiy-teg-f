@@ -16,24 +16,21 @@
   --font-weight-title: 785;
   --font-weight-text: 465;
 
+  --button-text-color: #00cc14;
+
   --bg-gradient: repeating-linear-gradient(
       90deg,
-      var(--bg-gradient-bg-color),
-      var(--bg-gradient-bg-color) 2px,
-      transparent 2px,
-      transparent 4px
+      var(--bg-gradient-bg-color) 0 2px,
+      rgb(0 0 0 / 0) 2px 4px
     ),
     repeating-linear-gradient(
       180deg,
-      var(--bg-gradient-bg-color),
-      var(--bg-gradient-bg-color) 2px,
-      transparent 2px,
-      transparent 4px
+      var(--bg-gradient-bg-color) 0 2px,
+      rgb(0 0 0 / 0) 2px 4px
     ),
     linear-gradient(
-      to bottom,
-      var(--bg-gradient-color-from),
-      var(--bg-gradient-color-to)
+      var(--bg-gradient-color-from) 0%,
+      var(--bg-gradient-color-to) 100%
     );
 }
 
@@ -47,24 +44,21 @@
   --font-weight-title: 700;
   --font-weight-text: 400;
 
+  --button-text-color: white;
+
   --bg-gradient: repeating-linear-gradient(
       90deg,
-      var(--bg-gradient-bg-color),
-      var(--bg-gradient-bg-color) 2px,
-      transparent 2px,
-      transparent 4px
+      var(--bg-gradient-bg-color) 0 2px,
+      rgb(0 0 0 / 0) 2px 4px
     ),
     repeating-linear-gradient(
       180deg,
-      var(--bg-gradient-bg-color),
-      var(--bg-gradient-bg-color) 2px,
-      transparent 2px,
-      transparent 4px
+      var(--bg-gradient-bg-color) 0 2px,
+      rgb(0 0 0 / 0) 2px 4px
     ),
     linear-gradient(
-      to bottom,
-      var(--bg-gradient-color-from),
-      var(--bg-gradient-color-to)
+      var(--bg-gradient-color-from) 0%,
+      var(--bg-gradient-color-to) 100%
     );
 }
 
@@ -77,25 +71,23 @@
     --bg-gradient-bg-color: #d3d3d3;
     --font-weight-title: 700;
     --font-weight-text: 400;
+    --button-text-color: white;
 
     --bg-gradient: repeating-linear-gradient(
         90deg,
-        var(--bg-gradient-bg-color),
-        var(--bg-gradient-bg-color) 2px,
-        transparent 2px,
-        transparent 4px
+        var(--bg-gradient-bg-color) 0 2px,
+        rgb(0 0 0 / 0) 2px 4px
       ),
       repeating-linear-gradient(
         180deg,
-        var(--bg-gradient-bg-color),
-        var(--bg-gradient-bg-color) 2px,
-        transparent 2px,
-        transparent 4px
+        var(--bg-gradient-bg-color) 0 2px,
+        rgb(0 0 0 / 0) 2px 4px
       ),
       linear-gradient(
-        to bottom,
-        var(--bg-gradient-color-from),
-        var(--bg-gradient-color-to)
+        180deg,
+        var(--bg-gradient-color-from) 0%,
+        var(--bg-gradient-color-from) 0.01%,
+        var(--bg-gradient-color-to) 100%
       );
   }
 }
