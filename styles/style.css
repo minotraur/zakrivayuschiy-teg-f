@@ -150,7 +150,6 @@
 }
 
 .image__block:after {
-
   position: absolute;
   top: 25px;
   right: 25px;
@@ -162,6 +161,13 @@
   -webkit-text-stroke: 1px #fff;
   text-stroke: 1px #fff;
   mix-blend-mode: hard-light;
+}
+
+@supports (text-stroke: 1px #fff) {
+  .image__block:after {
+    -webkit-text-stroke: 1px #fff;
+    text-stroke: 1px #fff;
+  }
 }
 
 .card:nth-child(1) .image__block:after,
@@ -255,7 +261,6 @@
   position: relative;
   width: 128px;
   height: 35px;
-  border: none;
   border: 2px solid var(--accent-color);
   font-family: "PressStart2P-Regular", monospace;
   background: none;
