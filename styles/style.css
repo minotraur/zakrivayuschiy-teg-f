@@ -77,6 +77,7 @@
   text-transform: uppercase;
   background: none;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .theme-menu__item:has(.theme-menu__button:disabled) {
@@ -97,10 +98,13 @@
 
 .theme-menu__button:focus {
   outline: none;
+  opacity: 0.6;
+  transition: 0.5s;
 }
 
 .theme-menu__button:focus-visible {
   border-block-end: 2px solid currentColor;
+  animation: left-right-underline 0.5s linear;
 }
 
 /* Конец header */
@@ -213,6 +217,7 @@
 
 .card__icon-button:focus-visible {
   outline: 2px solid currentColor;
+  transition: 0.3s ease;
 }
 
 .card__like-button {
@@ -220,7 +225,7 @@
   width: 128px;
   height: 35px;
   border: none;
-  outline: 2px solid var(--accent-color);
+  border: 2px solid var(--accent-color);
   font-family: "PressStart2P-Regular", monospace;
   background: none;
   cursor: pointer;
@@ -229,13 +234,20 @@
 .card__like-button .button__text {
   position: relative;
   z-index: 1;
-  mix-blend-mode: difference;
   color: var(--button-text-color);
+  mix-blend-mode: difference;
 }
 
-.card__like-button:focus-visible {
-  box-shadow: 4px 4px 0 0 currentColor;
-  outline: 2px solid var(--accent-color);
+.card__like-button:focus,
+.footer-button:focus,
+.dialog-button:focus {
+  outline: none;
+}
+
+.card__like-button:focus-visible,
+.footer-button:focus-visible,
+.dialog-button:focus-visible {
+  box-shadow: 2px 2px 0 0 currentColor;
   transition: 0.5s ease-in-out;
 }
 
@@ -266,7 +278,7 @@
   border: 2px solid currentColor;
   padding: 15px;
   color: var(--accent-color);
-  background-color: transparent;
+  background-color: var(--card-background-color);
   cursor: pointer;
   inline-size: 306px;
   block-size: 80px;
@@ -289,8 +301,8 @@
   padding: 32px 42px;
   color: var(--accent-color);
   font-family: "PressStart2P-Regular", monospace;
-  background-color: black;
-  block-size: 195px;
+  background-color: var(--card-background-color);
+  min-block-size: 195px;
   inline-size: 341px;
 }
 
@@ -299,7 +311,7 @@
 }
 
 .dialog:not([open]) {
-  opacity: 0;
+  display: none;
   pointer-events: none;
 }
 

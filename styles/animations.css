@@ -36,6 +36,19 @@
   }
 }
 
+@keyframes left-right-underline {
+  from {
+    color: var(--accent-color);
+    opacity: 0.6;
+    width: 0;
+  }
+  to {
+    color: var(--accent-color);
+    opacity: 0.6;
+    width: 100%;
+  }
+}
+
 @keyframes change-opacity {
   from {
     opacity: 0;
