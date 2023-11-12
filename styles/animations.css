@@ -15,24 +15,11 @@
 
 @keyframes left-right {
   from {
-    right: -13px;
+    left: -22px;
   }
 
   to {
-    right: -9px;
-  }
-}
-
-@keyframes left-right-button {
-  from {
-    translate: transformX(-100%);
-    width: 0;
-  }
-  to {
-    background: var(--accent-color);
-    width: 100%;
-    translate: transformX(0);
-    overflow: auto;
+    left: -18px;
   }
 }
 
