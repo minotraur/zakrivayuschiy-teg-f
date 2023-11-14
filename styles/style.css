@@ -340,6 +340,7 @@
   color: var(--accent-color);
   font-family: var(--custom-font), fantasy;
   background: var(--card-background-color);
+  min-inline-size: 341px;
   max-inline-size: 357px;
 }
 
@@ -349,10 +350,10 @@
 
 .dialog__info {
   display: grid;
-  grid-template-columns: 39px 1fr;
+  grid-template-columns: min-content 1fr;
+  max-block-size: 63px;
   align-items: center;
   gap: 20px;
-  height: 63p;
 }
 
 .dialog .floppy-image {
@@ -398,6 +399,10 @@
   .footer-button .floppy-image {
     width: 28px;
     height: 28px;
+  }
+
+  .dialog[open] {
+    max-inline-size: 341px;
   }
 }
 
